@@ -1,7 +1,7 @@
-export type Profai = {
+export type Proop = {
   version: '0.1.0'
-  name: 'linktree'
-  constants: [{ name: 'LINKTREE'; type: 'bytes'; value: '[76, 73, 78, 75, 84, 82, 69, 69]' }]
+  name: 'proop'
+  constants: [{ name: 'PROOP_TAG'; type: 'bytes'; value: '[76, 73, 78, 75, 84, 82, 69, 69]' }]
   instructions: [
     {
       name: 'init'
@@ -37,10 +37,10 @@ export type Profai = {
   ]
 }
 
-export const IDL: Profai = {
+export const IDL: Proop = {
   version: '0.1.0',
-  name: 'linktree',
-  constants: [{ name: 'LINKTREE', type: 'bytes', value: '[76, 73, 78, 75, 84, 82, 69, 69]' }],
+  name: 'proop',
+  constants: [{ name: 'PROOP_TAG', type: 'bytes', value: '[76, 73, 78, 75, 84, 82, 69, 69]' }],
   instructions: [
     {
       name: 'init',

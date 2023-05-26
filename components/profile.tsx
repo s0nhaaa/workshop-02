@@ -1,6 +1,6 @@
 'use client'
 
-import { PROFILE_TAG, PROGRAM_ID } from '@/configs/program'
+import { PROOP_TAG, PROGRAM_ID } from '@/configs/program'
 import useLoadProgram from '@/hooks/useLoadProgram'
 import { Profile } from '@/types/profile'
 import * as anchor from '@project-serum/anchor'
@@ -28,13 +28,13 @@ export default function Profile({ isGuest, wallet }: ProfileProps) {
   // Add more social media link here
   const [facebook, setFacebook] = useState('https://www.facebook.com')
 
-  const { program: profaiProgram, programID } = useLoadProgram(PROGRAM_ID)
+  const { program: proopProgram, programID } = useLoadProgram(PROGRAM_ID)
 
   const { disconnect } = useWallet()
   const [profilePDA] = useMemo(
     () =>
       anchor.web3.PublicKey.findProgramAddressSync(
-        [anchor.utils.bytes.utf8.encode(PROFILE_TAG), publicKey.toBuffer()],
+        [anchor.utils.bytes.utf8.encode(PROOP_TAG), publicKey.toBuffer()],
         programID,
       ),
     [publicKey, programID],
@@ -43,14 +43,13 @@ export default function Profile({ isGuest, wallet }: ProfileProps) {
   useEffect(() => {
     getProfile()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [profaiProgram, publicKey, wallet])
+  }, [proopProgram, publicKey, wallet])
 
   const getProfile = async () => {
-    // if (!anchorWallet) setVisible(true)
-    if (!profaiProgram || !publicKey) return
+    if (!proopProgram || !publicKey) return
 
     try {
-      const profile = await profaiProgram.account.profile.all([
+      const profile = await proopProgram.account.profile.all([
         {
           memcmp: {
             offset: anchor.ACCOUNT_DISCRIMINATOR_SIZE,

@@ -1,4 +1,4 @@
-import { IDL, Profai } from '@/configs/profai'
+import { IDL, Proop } from '@/configs/proop'
 import * as anchor from '@project-serum/anchor'
 import { useAnchorWallet, useConnection } from '@solana/wallet-adapter-react'
 import { PublicKey } from '@solana/web3.js'
@@ -13,7 +13,7 @@ export default function useLoadProgram(id: string) {
   const program = useMemo(() => {
     if (wallet) {
       const provider = new anchor.AnchorProvider(connection, wallet, anchor.AnchorProvider.defaultOptions())
-      return new anchor.Program<Profai>(IDL, programID, provider)
+      return new anchor.Program<Proop>(IDL, programID, provider)
     }
   }, [programID, wallet, connection])
 

@@ -19,7 +19,7 @@ const variants: Variants = {
   },
 }
 
-export function Social({ name = 'Profai', url = 'https://profai.vercel.app', ...props }: SocialProps) {
+export function Social({ name = 'proop', url = 'https://proop.vercel.app', ...props }: SocialProps) {
   const [isHover, setIsHover] = useState(false)
 
   return (

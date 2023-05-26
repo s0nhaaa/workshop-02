@@ -4,7 +4,7 @@ type SocialProps = ComponentProps<'input'> & {
   name?: string
 }
 
-export default function SocialInput({ name = 'Profai', ...props }: SocialProps) {
+export default function SocialInput({ name = 'Proop', ...props }: SocialProps) {
   return (
     <div>
       <label className='label'>
